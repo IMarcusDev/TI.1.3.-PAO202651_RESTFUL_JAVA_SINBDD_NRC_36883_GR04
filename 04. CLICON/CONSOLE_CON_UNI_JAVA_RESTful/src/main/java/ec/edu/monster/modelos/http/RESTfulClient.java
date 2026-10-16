@@ -25,14 +25,46 @@ public class RESTfulClient {
 
   public String get(EndpointsEnum endpoint) throws IOException, InterruptedException {
     HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create(baseUrl + endpoint))
-            .header("Accept", "application/json")
-            .GET()
-            .build();
+      .uri(URI.create(baseUrl + endpoint))
+      .header("Accept", "application/json")
+      .GET()
+      .build();
 
     HttpResponse<String> response = http.send(
-            request,
-            HttpResponse.BodyHandlers.ofString()
+      request,
+      HttpResponse.BodyHandlers.ofString()
+    );
+
+    return response.body();
+  }
+  
+  public String get(EndpointsEnum endpoint, String token) throws IOException, InterruptedException {
+    HttpRequest request = HttpRequest.newBuilder()
+      .uri(URI.create(baseUrl + endpoint))
+      .header("Accept", "application/json")
+      .header("Authorization", token)
+      .GET()
+      .build();
+
+    HttpResponse<String> response = http.send(
+      request,
+      HttpResponse.BodyHandlers.ofString()
+    );
+
+    return response.body();
+  }
+  
+  public String get(String endpoint, String token) throws IOException, InterruptedException {
+    HttpRequest request = HttpRequest.newBuilder()
+      .uri(URI.create(baseUrl + endpoint))
+      .header("Accept", "application/json")
+      .header("Authorization", token)
+      .GET()
+      .build();
+
+    HttpResponse<String> response = http.send(
+      request,
+      HttpResponse.BodyHandlers.ofString()
     );
 
     return response.body();

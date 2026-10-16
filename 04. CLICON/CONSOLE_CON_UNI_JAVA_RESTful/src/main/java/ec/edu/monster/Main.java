@@ -1,6 +1,7 @@
 package ec.edu.monster;
 
 
+import ec.edu.monster.vista.ConverterView;
 import ec.edu.monster.vista.LoginView;
 import ec.edu.monster.vista.utils.MessagesUtils;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +29,7 @@ public class Main {
     }
     
     // Menu
-    // ConverterView.showMenu();
+    ConverterView.showMenu();
     
     MessagesUtils.printMessage("Hasta Luego!");
     TimeUnit.SECONDS.sleep(3);
