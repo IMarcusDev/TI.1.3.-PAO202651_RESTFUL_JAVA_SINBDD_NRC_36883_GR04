@@ -10,4 +10,12 @@
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>ec.edu.monster.CONSOLE_CON_UNI_JAVA_RESTful</exec.mainClass>
     </properties>
+    
+    <dependencies>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20250517</version>
+      </dependency>
+    </dependencies>
 </project>
