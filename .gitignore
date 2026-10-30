@@ -5,3 +5,6 @@
 
 # Local ODD working notes (not versioned)
 odd/
+
+# PowerDesigner: copias de respaldo automáticas
+*.oob
